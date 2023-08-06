@@ -1,0 +1,7 @@
+#Sat Jul 15 19:23:54 CEST 2023
+base.1=D\:\\Projets\\mighty_quiz_josue\\build\\app\\intermediates\\dex\\release\\minifyReleaseWithR8\\classes2.dex
+path.1=classes2.dex
+base.0=D\:\\Projets\\mighty_quiz_josue\\build\\app\\intermediates\\dex\\release\\minifyReleaseWithR8\\classes.dex
+renamed.1=classes2.dex
+renamed.0=classes.dex
+path.0=classes.dex

@@ -1,0 +1,14 @@
+com.nb.nb_utils-jetified-window-java-1.0.0-beta04-0 C:\Users\USER\.gradle\caches\transforms-3\185d040e545b66fa55ac668a573e3095\transformed\jetified-window-java-1.0.0-beta04\res
+com.nb.nb_utils-jetified-window-1.0.0-beta04-1 C:\Users\USER\.gradle\caches\transforms-3\49db45cc9aaf4664704ba6cb07e58604\transformed\jetified-window-1.0.0-beta04\res
+com.nb.nb_utils-jetified-annotation-experimental-1.1.0-2 C:\Users\USER\.gradle\caches\transforms-3\79545d0cdab9c00d29188e47c49ddbb8\transformed\jetified-annotation-experimental-1.1.0\res
+com.nb.nb_utils-core-1.6.0-3 C:\Users\USER\.gradle\caches\transforms-3\8773c77625e0bc7e7b3128d341bec4ac\transformed\core-1.6.0\res
+com.nb.nb_utils-main-4 C:\Users\USER\AppData\Local\Pub\Cache\hosted\pub.dev\nb_utils-5.0.8\android\src\main\res
+com.nb.nb_utils-release-5 C:\Users\USER\AppData\Local\Pub\Cache\hosted\pub.dev\nb_utils-5.0.8\android\src\release\res
+com.nb.nb_utils-packaged_res-6 D:\Projets\mighty_quiz_josue\build\connectivity_plus\intermediates\packaged_res\release
+com.nb.nb_utils-packaged_res-7 D:\Projets\mighty_quiz_josue\build\fluttertoast\intermediates\packaged_res\release
+com.nb.nb_utils-pngs-8 D:\Projets\mighty_quiz_josue\build\nb_utils\generated\res\pngs\release
+com.nb.nb_utils-resValues-9 D:\Projets\mighty_quiz_josue\build\nb_utils\generated\res\resValues\release
+com.nb.nb_utils-rs-10 D:\Projets\mighty_quiz_josue\build\nb_utils\generated\res\rs\release
+com.nb.nb_utils-mergeReleaseResources-11 D:\Projets\mighty_quiz_josue\build\nb_utils\intermediates\incremental\release\mergeReleaseResources\merged.dir
+com.nb.nb_utils-mergeReleaseResources-12 D:\Projets\mighty_quiz_josue\build\nb_utils\intermediates\incremental\release\mergeReleaseResources\stripped.dir
+com.nb.nb_utils-merged_res-13 D:\Projets\mighty_quiz_josue\build\nb_utils\intermediates\merged_res\release

@@ -1,0 +1,134 @@
+[
+    {
+        "merged": "com.mundi.schoolquiz.app-merged_res-42:/mipmap-xhdpi_ic_launcher_adaptive_back.png.flat",
+        "source": "com.mundi.schoolquiz.app-main-35:/mipmap-xhdpi/ic_launcher_adaptive_back.png"
+    },
+    {
+        "merged": "com.mundi.schoolquiz.app-merged_res-42:/mipmap-xxhdpi_ic_launcher_foreground.png.flat",
+        "source": "com.mundi.schoolquiz.app-main-35:/mipmap-xxhdpi/ic_launcher_foreground.png"
+    },
+    {
+        "merged": "com.mundi.schoolquiz.app-merged_res-42:/drawable-xxxhdpi_ic_stat_onesignal_default.png.flat",
+        "source": "com.mundi.schoolquiz.app-main-35:/drawable-xxxhdpi/ic_stat_onesignal_default.png"
+    },
+    {
+        "merged": "com.mundi.schoolquiz.app-merged_res-42:/mipmap-xhdpi_ic_launcher.png.flat",
+        "source": "com.mundi.schoolquiz.app-main-35:/mipmap-xhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "com.mundi.schoolquiz.app-merged_res-42:/drawable-hdpi_ic_stat_onesignal_default.png.flat",
+        "source": "com.mundi.schoolquiz.app-main-35:/drawable-hdpi/ic_stat_onesignal_default.png"
+    },
+    {
+        "merged": "com.mundi.schoolquiz.app-merged_res-42:/mipmap-hdpi_ic_launcher_foreground.png.flat",
+        "source": "com.mundi.schoolquiz.app-main-35:/mipmap-hdpi/ic_launcher_foreground.png"
+    },
+    {
+        "merged": "com.mundi.schoolquiz.app-merged_res-42:/mipmap-xhdpi_ic_launcher_foreground.png.flat",
+        "source": "com.mundi.schoolquiz.app-main-35:/mipmap-xhdpi/ic_launcher_foreground.png"
+    },
+    {
+        "merged": "com.mundi.schoolquiz.app-merged_res-42:/mipmap-xxhdpi_ic_launcher_round.png.flat",
+        "source": "com.mundi.schoolquiz.app-main-35:/mipmap-xxhdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "com.mundi.schoolquiz.app-merged_res-42:/mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "com.mundi.schoolquiz.app-main-35:/mipmap-anydpi-v26/ic_launcher_round.xml"
+    },
+    {
+        "merged": "com.mundi.schoolquiz.app-merged_res-42:/mipmap-xxxhdpi_ic_launcher_round.png.flat",
+        "source": "com.mundi.schoolquiz.app-main-35:/mipmap-xxxhdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "com.mundi.schoolquiz.app-merged_res-42:/drawable-mdpi_ic_stat_onesignal_default.png.flat",
+        "source": "com.mundi.schoolquiz.app-main-35:/drawable-mdpi/ic_stat_onesignal_default.png"
+    },
+    {
+        "merged": "com.mundi.schoolquiz.app-merged_res-42:/mipmap-xxxhdpi_ic_launcher.png.flat",
+        "source": "com.mundi.schoolquiz.app-main-35:/mipmap-xxxhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "com.mundi.schoolquiz.app-merged_res-42:/mipmap-xxhdpi_ic_launcher.png.flat",
+        "source": "com.mundi.schoolquiz.app-main-35:/mipmap-xxhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "com.mundi.schoolquiz.app-merged_res-42:/mipmap-xxhdpi_ic_launcher_adaptive_fore.png.flat",
+        "source": "com.mundi.schoolquiz.app-main-35:/mipmap-xxhdpi/ic_launcher_adaptive_fore.png"
+    },
+    {
+        "merged": "com.mundi.schoolquiz.app-merged_res-42:/drawable-xhdpi_ic_stat_onesignal_default.png.flat",
+        "source": "com.mundi.schoolquiz.app-main-35:/drawable-xhdpi/ic_stat_onesignal_default.png"
+    },
+    {
+        "merged": "com.mundi.schoolquiz.app-merged_res-42:/mipmap-xhdpi_ic_launcher_adaptive_fore.png.flat",
+        "source": "com.mundi.schoolquiz.app-main-35:/mipmap-xhdpi/ic_launcher_adaptive_fore.png"
+    },
+    {
+        "merged": "com.mundi.schoolquiz.app-merged_res-42:/mipmap-xxxhdpi_ic_launcher_foreground.png.flat",
+        "source": "com.mundi.schoolquiz.app-main-35:/mipmap-xxxhdpi/ic_launcher_foreground.png"
+    },
+    {
+        "merged": "com.mundi.schoolquiz.app-merged_res-42:/mipmap-mdpi_ic_launcher_adaptive_back.png.flat",
+        "source": "com.mundi.schoolquiz.app-main-35:/mipmap-mdpi/ic_launcher_adaptive_back.png"
+    },
+    {
+        "merged": "com.mundi.schoolquiz.app-merged_res-42:/mipmap-hdpi_ic_launcher.png.flat",
+        "source": "com.mundi.schoolquiz.app-main-35:/mipmap-hdpi/ic_launcher.png"
+    },
+    {
+        "merged": "com.mundi.schoolquiz.app-merged_res-42:/mipmap-mdpi_ic_launcher_foreground.png.flat",
+        "source": "com.mundi.schoolquiz.app-main-35:/mipmap-mdpi/ic_launcher_foreground.png"
+    },
+    {
+        "merged": "com.mundi.schoolquiz.app-merged_res-42:/mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "com.mundi.schoolquiz.app-main-35:/mipmap-anydpi-v26/ic_launcher.xml"
+    },
+    {
+        "merged": "com.mundi.schoolquiz.app-merged_res-42:/mipmap-xxxhdpi_ic_launcher_adaptive_fore.png.flat",
+        "source": "com.mundi.schoolquiz.app-main-35:/mipmap-xxxhdpi/ic_launcher_adaptive_fore.png"
+    },
+    {
+        "merged": "com.mundi.schoolquiz.app-merged_res-42:/mipmap-mdpi_ic_launcher_round.png.flat",
+        "source": "com.mundi.schoolquiz.app-main-35:/mipmap-mdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "com.mundi.schoolquiz.app-merged_res-42:/mipmap-mdpi_ic_launcher.png.flat",
+        "source": "com.mundi.schoolquiz.app-main-35:/mipmap-mdpi/ic_launcher.png"
+    },
+    {
+        "merged": "com.mundi.schoolquiz.app-merged_res-42:/mipmap-hdpi_ic_launcher_adaptive_fore.png.flat",
+        "source": "com.mundi.schoolquiz.app-main-35:/mipmap-hdpi/ic_launcher_adaptive_fore.png"
+    },
+    {
+        "merged": "com.mundi.schoolquiz.app-merged_res-42:/mipmap-mdpi_ic_launcher_adaptive_fore.png.flat",
+        "source": "com.mundi.schoolquiz.app-main-35:/mipmap-mdpi/ic_launcher_adaptive_fore.png"
+    },
+    {
+        "merged": "com.mundi.schoolquiz.app-merged_res-42:/mipmap-xxhdpi_ic_launcher_adaptive_back.png.flat",
+        "source": "com.mundi.schoolquiz.app-main-35:/mipmap-xxhdpi/ic_launcher_adaptive_back.png"
+    },
+    {
+        "merged": "com.mundi.schoolquiz.app-merged_res-42:/drawable-xxhdpi_ic_stat_onesignal_default.png.flat",
+        "source": "com.mundi.schoolquiz.app-main-35:/drawable-xxhdpi/ic_stat_onesignal_default.png"
+    },
+    {
+        "merged": "com.mundi.schoolquiz.app-merged_res-42:/drawable-v21_launch_background.xml.flat",
+        "source": "com.mundi.schoolquiz.app-main-35:/drawable-v21/launch_background.xml"
+    },
+    {
+        "merged": "com.mundi.schoolquiz.app-merged_res-42:/mipmap-xhdpi_ic_launcher_round.png.flat",
+        "source": "com.mundi.schoolquiz.app-main-35:/mipmap-xhdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "com.mundi.schoolquiz.app-merged_res-42:/mipmap-hdpi_ic_launcher_round.png.flat",
+        "source": "com.mundi.schoolquiz.app-main-35:/mipmap-hdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "com.mundi.schoolquiz.app-merged_res-42:/mipmap-hdpi_ic_launcher_adaptive_back.png.flat",
+        "source": "com.mundi.schoolquiz.app-main-35:/mipmap-hdpi/ic_launcher_adaptive_back.png"
+    },
+    {
+        "merged": "com.mundi.schoolquiz.app-merged_res-42:/mipmap-xxxhdpi_ic_launcher_adaptive_back.png.flat",
+        "source": "com.mundi.schoolquiz.app-main-35:/mipmap-xxxhdpi/ic_launcher_adaptive_back.png"
+    }
+]
