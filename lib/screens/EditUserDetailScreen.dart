@@ -59,8 +59,9 @@ class EditUserDetailScreenState extends State<EditUserDetailScreen> {
   Future<void> editData() async {
     if (formKey.currentState!.validate()) {
       appStore.setLoading(true);
-      userDBService.updateDocument(
-          {UserKeys.age: dropdownValue.validate()}, appStore.userId).then(
+      userDBService.updateDocument({
+        UserKeys.age: dropdownValue.validate(),
+      }, appStore.userId).then(
         (value) {
           appStore.setLoading(false);
           setValue(USER_AGE, dropdownValue.validate());

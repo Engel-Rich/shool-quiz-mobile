@@ -64,10 +64,12 @@ class WheelSpinScreenState extends State<WheelSpinScreen> {
         });
       });
     }
-    random = Fortune.randomInt(0, items.length);
-    setState(() {
-      selected.add(random!);
-    });
+    if (items.isNotEmpty) {
+      random = Fortune.randomInt(0, items.length);
+      setState(() {
+        selected.add(random!);
+      });
+    }
   }
 
   @override
@@ -78,7 +80,8 @@ class WheelSpinScreenState extends State<WheelSpinScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: appBarComponent(context: context, title: appStore.translate('lbl_spin_play')),
+      appBar: appBarComponent(
+          context: context, title: appStore.translate('lbl_spin_play')),
       extendBodyBehindAppBar: true,
       body: isLoading
           ? Center(child: CircularProgressIndicator())
@@ -109,8 +112,11 @@ class WheelSpinScreenState extends State<WheelSpinScreen> {
                               ),
                             ],
                             onAnimationEnd: () {
-                              quizService.quizByQuizID(items[random!]).then((value) {
-                                QuizDescriptionScreen(quizModel: value).launch(context);
+                              quizService
+                                  .quizByQuizID(items[random!])
+                                  .then((value) {
+                                QuizDescriptionScreen(quizModel: value)
+                                    .launch(context);
                               }).catchError((e) {
                                 toast(e.toString());
                               });
@@ -119,8 +125,15 @@ class WheelSpinScreenState extends State<WheelSpinScreen> {
                               itemsName.length,
                               (index) {
                                 return FortuneItem(
-                                  child: Text(itemsName[index], style: boldTextStyle(color: Colors.white)),
-                                  style: FortuneItemStyle(borderColor: Color(0xffcb4346), borderWidth: 8, color: index % 2 == 0 ? colorPrimary : colorSecondary),
+                                  child: Text(itemsName[index],
+                                      style:
+                                          boldTextStyle(color: Colors.white)),
+                                  style: FortuneItemStyle(
+                                      borderColor: Color(0xffcb4346),
+                                      borderWidth: 8,
+                                      color: index % 2 == 0
+                                          ? colorPrimary
+                                          : colorSecondary),
                                 );
                               },
                             ),

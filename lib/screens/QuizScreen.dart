@@ -63,17 +63,20 @@ class QuizScreenState extends State<QuizScreen> {
       body: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          SingleChildScrollView(
-            child: Container(
-              height: context.height(),
+          Container(
+            height: context.height(),
+            child: SingleChildScrollView(
               child: Column(
                 children: [
                   hasSubCat
                       ? Container(
-                          padding: EdgeInsets.symmetric(vertical: 12, horizontal: 16),
+                          padding: EdgeInsets.symmetric(
+                              vertical: 12, horizontal: 16),
                           decoration: boxDecorationWithRoundedCorners(
                             borderRadius: BorderRadius.circular(12),
-                            backgroundColor: subCatId == null ? colorPrimary : context.cardColor,
+                            backgroundColor: subCatId == null
+                                ? colorPrimary
+                                : context.cardColor,
                           ),
                           child: RotatedBox(
                             quarterTurns: 3,
@@ -105,7 +108,8 @@ class QuizScreenState extends State<QuizScreen> {
                           return SizedBox(
                             width: 50,
                             child: Column(
-                              children: List.generate(snapshot.data!.length, (index) {
+                              children:
+                                  List.generate(snapshot.data!.length, (index) {
                                 CategoryModel mData = snapshot.data![index];
                                 return Container(
                                   padding: EdgeInsets.symmetric(vertical: 12),
@@ -113,12 +117,15 @@ class QuizScreenState extends State<QuizScreen> {
                                   margin: EdgeInsets.only(top: 8),
                                   decoration: boxDecorationWithRoundedCorners(
                                     borderRadius: BorderRadius.circular(12),
-                                    backgroundColor: subcategoryIndex == index ? colorPrimary : context.cardColor,
+                                    backgroundColor: subcategoryIndex == index
+                                        ? colorPrimary
+                                        : context.cardColor,
                                   ),
                                   child: RotatedBox(
                                     quarterTurns: 3,
                                     child: Text(
                                       mData.name!,
+                                      maxLines: 1,
                                       style: boldTextStyle(
                                           color: appStore.isDarkMode
                                               ? white
@@ -145,12 +152,15 @@ class QuizScreenState extends State<QuizScreen> {
                       return SizedBox();
                     },
                   ),
+                  SizedBox(height: 50)
                 ],
               ).paddingOnly(top: 16, right: 16, left: 16),
-            ).visible(hasSubCat == true),
-          ),
+            ),
+          ).visible(hasSubCat == true),
           FutureBuilder<List<QuizModel>>(
-            future: subCatId == null ? QuizService().getQuizByCatId(widget.catId) : QuizService().getQuizBySubCatId(subCatId!),
+            future: subCatId == null
+                ? QuizService().getQuizByCatId(widget.catId)
+                : QuizService().getQuizBySubCatId(subCatId!),
             builder: (context, snapshot) {
               if (snapshot.hasData) {
                 return snapshot.data!.isNotEmpty
@@ -171,7 +181,8 @@ class QuizScreenState extends State<QuizScreen> {
                                   : 16),
                           child: AnimationLimiter(
                             child: Column(
-                                children: AnimationConfiguration.toStaggeredList(
+                                children:
+                                    AnimationConfiguration.toStaggeredList(
                               duration: Duration(seconds: 1),
                               childAnimationBuilder: (widget) => SlideAnimation(
                                 horizontalOffset: 50.0,
@@ -181,14 +192,19 @@ class QuizScreenState extends State<QuizScreen> {
                                 (mData) {
                                   return QuizComponent(quiz: mData).onTap(
                                     () {
-                                      if (mData.questionRef.validate().isEmpty) return toast('No question found');
-                                      if (mData.minRequiredPoint! <= getIntAsync(USER_POINTS)) {
-                                        QuizDescriptionScreen(quizModel: mData).launch(context);
+                                      if (mData.questionRef.validate().isEmpty)
+                                        return toast('No question found');
+                                      if (mData.minRequiredPoint! <=
+                                          getIntAsync(USER_POINTS)) {
+                                        QuizDescriptionScreen(quizModel: mData)
+                                            .launch(context);
                                       } else {
-                                        toast('${appStore.translate('lbl_your_points')}:${getIntAsync(USER_POINTS)} \n ${appStore.translate('lbl_minimum_requied_points')} ${mData.minRequiredPoint}');
+                                        toast(
+                                            '${appStore.translate('lbl_your_points')}:${getIntAsync(USER_POINTS)} \n ${appStore.translate('lbl_minimum_requied_points')} ${mData.minRequiredPoint}');
                                       }
                                     },
-                                    borderRadius: BorderRadius.circular(defaultRadius),
+                                    borderRadius:
+                                        BorderRadius.circular(defaultRadius),
                                   ).paddingOnly(bottom: 16);
                                 },
                               ).toList(),
@@ -198,7 +214,8 @@ class QuizScreenState extends State<QuizScreen> {
                       )
                     : emptyWidget(text: appStore.translate('lbl_noDataFound'));
               }
-              return snapWidgetHelper(snapshot, defaultErrorMessage: errorSomethingWentWrong);
+              return snapWidgetHelper(snapshot,
+                  defaultErrorMessage: errorSomethingWentWrong);
             },
           ).expand(),
         ],

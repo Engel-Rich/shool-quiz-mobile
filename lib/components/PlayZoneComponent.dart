@@ -1,16 +1,16 @@
-import 'package:flutter/material.dart';
-import 'package:nb_utils/nb_utils.dart';
-import 'package:quizapp_flutter/screens/EarnPointScreen.dart';
 import '../main.dart';
-import '../models/QuestionModel.dart';
-import '../screens/ContainerProfileComplette.dart';
-import '../screens/DailyQuizDescriptionScreen.dart';
-import '../screens/QuizQuestionsScreen.dart';
-import '../screens/RandomQuizScreen.dart';
 import '../utils/colors.dart';
-import '../utils/constants.dart';
 import '../utils/images.dart';
 import '../utils/widgets.dart';
+import '../utils/constants.dart';
+import '../models/QuestionModel.dart';
+import 'package:flutter/material.dart';
+import 'package:nb_utils/nb_utils.dart';
+import '../screens/RandomQuizScreen.dart';
+import '../screens/QuizQuestionsScreen.dart';
+import '../screens/ContainerProfileComplette.dart';
+import '../screens/DailyQuizDescriptionScreen.dart';
+import 'package:quizapp_flutter/screens/EarnPointScreen.dart';
 
 class PlayZoneComponent extends StatefulWidget {
   final String? name;
@@ -36,8 +36,7 @@ class _PlayZoneComponentState extends State<PlayZoneComponent> {
     super.initState();
   }
 
-  PersistentBottomSheetController<dynamic> bottomshetUncompletteProfile(
-      BuildContext context) {
+  bottomshetUncompletteProfile(BuildContext context) {
     return showBottomSheet(
       context: context,
       shape: RoundedRectangleBorder(

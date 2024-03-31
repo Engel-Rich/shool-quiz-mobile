@@ -134,6 +134,7 @@ void main() async {
     appStore.setUserEmail(getStringAsync(USER_EMAIL));
     appStore.setProfileImage(getStringAsync(USER_PHOTO_URL));
     appStore.setUserAge(getStringAsync(USER_AGE));
+    appStore.setUserClasse(getStringAsync(USER_CLASS));
   }
   int themeModeIndex = getIntAsync(THEME_MODE_INDEX);
   if (themeModeIndex == ThemeModeLight) {

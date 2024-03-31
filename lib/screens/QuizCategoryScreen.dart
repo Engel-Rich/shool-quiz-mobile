@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:nb_utils/nb_utils.dart';
-import 'package:quizapp_flutter/components/QuizCategoryComponent.dart';
-import 'package:quizapp_flutter/main.dart';
-import 'package:quizapp_flutter/models/CategoryModel.dart';
-import 'package:quizapp_flutter/screens/QuizScreen.dart';
-import 'package:quizapp_flutter/utils/widgets.dart';
-
-import '../components/AppBarComponent.dart';
 import 'ContainerProfileComplette.dart';
+import 'package:quizapp_flutter/main.dart';
+import '../components/AppBarComponent.dart';
+import 'package:quizapp_flutter/utils/widgets.dart';
+import 'package:quizapp_flutter/screens/QuizScreen.dart';
+import 'package:quizapp_flutter/models/CategoryModel.dart';
+import 'package:quizapp_flutter/components/QuizCategoryComponent.dart';
 
 class QuizCategoryScreen extends StatefulWidget {
   static String tag = '/QuizCategoryScreen';
@@ -33,8 +32,7 @@ class QuizCategoryScreenState extends State<QuizCategoryScreen> {
     //
   }
 
-  PersistentBottomSheetController<dynamic> bottomshetUncompletteProfile(
-      BuildContext context) {
+  bottomshetUncompletteProfile(BuildContext context) {
     return showBottomSheet(
       context: context,
       shape: RoundedRectangleBorder(

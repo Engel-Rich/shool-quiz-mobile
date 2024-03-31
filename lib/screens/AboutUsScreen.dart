@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:nb_utils/nb_utils.dart';
-import 'package:package_info_plus/package_info_plus.dart';
 import 'package:quizapp_flutter/main.dart';
-import 'package:quizapp_flutter/utils/colors.dart';
-import 'package:quizapp_flutter/utils/constants.dart';
-import 'package:quizapp_flutter/utils/widgets.dart';
-
 import '../components/AppBarComponent.dart';
-import '../utils/images.dart';
+import 'package:quizapp_flutter/utils/colors.dart';
+import 'package:quizapp_flutter/utils/widgets.dart';
+import 'package:quizapp_flutter/utils/constants.dart';
+import 'package:package_info_plus/package_info_plus.dart';
+
+// import '../utils/images.dart';
 
 class AboutUsScreen extends StatefulWidget {
   static String tag = '/AboutUsScreen';
@@ -35,7 +35,8 @@ class AboutUsScreenState extends State<AboutUsScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: appBarComponent(context: context, title: appStore.translate('lbl_about_us')),
+      appBar: appBarComponent(
+          context: context, title: appStore.translate('lbl_about_us')),
       body: Container(
         padding: EdgeInsets.all(16),
         child: Column(
@@ -45,17 +46,20 @@ class AboutUsScreenState extends State<AboutUsScreen> {
             Text(mAppName, style: primaryTextStyle(size: 30)),
             16.height,
             Container(
-              decoration: BoxDecoration(color: colorPrimary, borderRadius: radius(4)),
+              decoration:
+                  BoxDecoration(color: colorPrimary, borderRadius: radius(4)),
               height: 4,
               width: 100,
             ),
             16.height,
-            Text(appStore.translate('lbl_version'), style: secondaryTextStyle()),
+            Text(appStore.translate('lbl_version'),
+                style: secondaryTextStyle()),
             FutureBuilder<PackageInfo>(
               future: PackageInfo.fromPlatform(),
               builder: (_, snap) {
                 if (snap.hasData) {
-                  return Text('${snap.data!.version.validate()}', style: primaryTextStyle());
+                  return Text('${snap.data!.version.validate()}',
+                      style: primaryTextStyle());
                 }
                 return SizedBox();
               },
@@ -82,7 +86,8 @@ class AboutUsScreenState extends State<AboutUsScreen> {
                 children: [
                   Icon(Icons.contact_support_outlined, color: Colors.white),
                   8.width,
-                  Text(appStore.translate('lbl_contactUs'), style: boldTextStyle(color: white)),
+                  Text(appStore.translate('lbl_contactUs'),
+                      style: boldTextStyle(color: white)),
                 ],
               ),
               onTap: () {

@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:nb_utils/nb_utils.dart';
 import 'package:quizapp_flutter/main.dart';
-import 'package:quizapp_flutter/models/QuizModel.dart';
-import 'package:quizapp_flutter/utils/constants.dart';
 import 'package:quizapp_flutter/utils/strings.dart';
+import 'package:quizapp_flutter/models/QuizModel.dart';
+// import 'package:quizapp_flutter/utils/constants.dart';
 
 class QuizDescriptionComponent extends StatefulWidget {
   static String tag = '/QuizDescriptionComponent';

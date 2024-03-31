@@ -2,6 +2,7 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:modal_bottom_sheet/modal_bottom_sheet.dart';
 import 'package:nb_utils/nb_utils.dart';
 import 'package:quizapp_flutter/main.dart';
 import 'package:quizapp_flutter/models/ClasseModel.dart';
@@ -413,27 +414,27 @@ class ProfileScreenState extends State<ProfileScreen> {
                   // 16.height,
                   // Text(appStore.translate('lbl_age')),
                   // //  filière
-                  // 8.height,
-                  // DropdownButtonFormField<String>(
-                  //   value: filiere,
-                  //   decoration: inputDecoration(),
-                  //   dropdownColor: Theme.of(context).cardColor,
-                  //   items: List.generate(
-                  //       filieres.length,
-                  //       (index) => DropdownMenuItem<String>(
-                  //             value: filieres[index],
-                  //             child: Text(
-                  //               filieres[index],
-                  //               style: primaryTextStyle(),
-                  //             ),
-                  //           )),
-                  //   onChanged: (value) {
-                  //     filiere = value!;
-                  //   },
-                  //   validator: (value) {
-                  //     return value == null ? errorThisFieldRequired : null;
-                  //   },
-                  // ),
+                  8.height,
+                  DropdownButtonFormField<String>(
+                    value: filiere,
+                    decoration: inputDecoration(),
+                    dropdownColor: Theme.of(context).cardColor,
+                    items: List.generate(
+                        filieres.length,
+                        (index) => DropdownMenuItem<String>(
+                              value: filieres[index],
+                              child: Text(
+                                filieres[index],
+                                style: primaryTextStyle(),
+                              ),
+                            )),
+                    onChanged: (value) {
+                      filiere = value!;
+                    },
+                    validator: (value) {
+                      return value == null ? errorThisFieldRequired : null;
+                    },
+                  ),
 
                   //  classe
 
@@ -444,12 +445,35 @@ class ProfileScreenState extends State<ProfileScreen> {
                     value: className,
                     decoration: inputDecoration(hintText: 'classe'),
                     dropdownColor: Theme.of(context).cardColor,
+                    onTap: () {
+                      showMaterialModalBottomSheet(
+                          context: context,
+                          builder: (context) {
+                            return Scaffold(
+                              appBar: AppBar(
+                                shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.vertical(
+                                        top: Radius.circular(10))),
+                                title: Text("Select Classp",
+                                    style: TextStyle(color: scaffoldColor)),
+                                leading: InkWell(
+                                  onTap: () => Navigator.pop(context),
+                                  child: Icon(
+                                    Icons.arrow_circle_down_outlined,
+                                    size: 40,
+                                  ),
+                                ),
+                              ),
+                            );
+                          });
+                    },
                     items: List.generate(
-                        classNames.length,
+                        0, //classNames.length,
                         (index) => DropdownMenuItem<String>(
                               value: classNames[index],
                               child: Text(
-                                classNames[index],
+                                className ??
+                                    'Select class', // classNames[index],
                                 style: primaryTextStyle(),
                               ),
                             )),

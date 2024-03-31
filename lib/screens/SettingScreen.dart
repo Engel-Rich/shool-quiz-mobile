@@ -1,13 +1,13 @@
-import 'package:flutter/material.dart';
-import 'package:nb_utils/nb_utils.dart';
-import 'package:quizapp_flutter/components/ThemeSelectionDialog.dart';
-import 'package:quizapp_flutter/main.dart';
-import 'package:quizapp_flutter/utils/colors.dart';
-import '../components/AppBarComponent.dart';
-import '../utils/constants.dart';
+import 'LoginScreen.dart';
 import '../utils/images.dart';
 import '../utils/widgets.dart';
-import 'LoginScreen.dart';
+import '../utils/constants.dart';
+import 'package:flutter/material.dart';
+import 'package:nb_utils/nb_utils.dart';
+import 'package:quizapp_flutter/main.dart';
+import '../components/AppBarComponent.dart';
+import 'package:quizapp_flutter/components/ThemeSelectionDialog.dart';
+// import 'package:quizapp_flutter/utils/colors.dart';
 
 class SettingScreen extends StatefulWidget {
   @override
@@ -50,24 +50,29 @@ class SettingScreenState extends State<SettingScreen> {
     }
 
     return Scaffold(
-      appBar: appBarComponent(context: context, title: appStore.translate('lbl_setting')),
+      appBar: appBarComponent(
+          context: context, title: appStore.translate('lbl_setting')),
       body: Theme(
-        data: ThemeData(highlightColor: Colors.transparent, splashFactory: NoSplash.splashFactory),
+        data: ThemeData(
+            highlightColor: Colors.transparent,
+            splashFactory: NoSplash.splashFactory),
         child: Column(
           children: [
             SettingItemWidget(
                 padding: EdgeInsets.all(0),
-                leading:  iconWidget(language),
+                leading: iconWidget(language),
                 title: appStore.translate('lbl_language'),
                 trailing: DropdownButton<LanguageDataModel>(
                   value: selectedLanguageDataModel,
                   underline: SizedBox(),
-                  dropdownColor: appStore.isDarkMode ? Colors.black : Colors.white,
+                  dropdownColor:
+                      appStore.isDarkMode ? Colors.black : Colors.white,
                   elevation: defaultElevation,
                   onChanged: (LanguageDataModel? data) async {
                     selectedLanguageDataModel = data;
 
-                    await setValue(SELECTED_LANGUAGE_CODE, data!.languageCode.validate());
+                    await setValue(
+                        SELECTED_LANGUAGE_CODE, data!.languageCode.validate());
 
                     setState(() {});
                     appStore.setLanguage(data.languageCode.validate());
@@ -107,7 +112,8 @@ class SettingScreenState extends State<SettingScreen> {
                 await showInDialog(
                   context,
                   contentPadding: EdgeInsets.zero,
-                  title: Text(appStore.translate('lbl_select_theme'), style: boldTextStyle(size: 20)),
+                  title: Text(appStore.translate('lbl_select_theme'),
+                      style: boldTextStyle(size: 20)),
                   builder: (_) {
                     // return SizedBox();
                     return ThemeSelectionDialog();

@@ -1,30 +1,30 @@
-import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:flutter_mobx/flutter_mobx.dart';
-import 'package:nb_utils/nb_utils.dart';
-import 'package:onesignal_flutter/onesignal_flutter.dart';
-import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
-import 'package:quizapp_flutter/screens/ChatScreen.dart';
-import 'package:quizapp_flutter/services/userDBService.dart';
-import '../components/DrawerComponent.dart';
-import '../components/PlayZoneComponent.dart';
-import '../components/QuizCategoryComponent.dart';
 import '../main.dart';
-import '../models/CategoryModel.dart';
-import '../models/PlayZoneModel.dart';
-import '../services/QuizService.dart';
-import '../utils/colors.dart';
-import '../utils/constants.dart';
-import '../utils/images.dart';
-import '../utils/widgets.dart';
-import 'package:flutter_advanced_drawer/flutter_advanced_drawer.dart';
-import 'ContainerProfileComplette.dart';
 import 'ContestScreen.dart';
 import 'ProfileScreen.dart';
+import '../utils/colors.dart';
+import '../utils/images.dart';
+import 'WheelSpinScreen.dart';
+import '../utils/widgets.dart';
+import '../utils/constants.dart';
 import 'QuizCategoryScreen.dart';
 import 'QuizDescriptionScreen.dart';
-import 'QuizScreen.dart';
-import 'WheelSpinScreen.dart';
+import '../models/PlayZoneModel.dart';
+import '../services/QuizService.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:nb_utils/nb_utils.dart';
+import 'ContainerProfileComplette.dart';
+import '../components/DrawerComponent.dart';
+import '../components/PlayZoneComponent.dart';
+import 'package:flutter_mobx/flutter_mobx.dart';
+import 'package:quizapp_flutter/screens/ChatScreen.dart';
+import 'package:onesignal_flutter/onesignal_flutter.dart';
+import 'package:quizapp_flutter/services/userDBService.dart';
+import 'package:flutter_advanced_drawer/flutter_advanced_drawer.dart';
+import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
+// import '../components/QuizCategoryComponent.dart';
+// import '../models/CategoryModel.dart';
+// import 'QuizScreen.dart';
 
 class HomeScreen extends StatefulWidget {
   @override
@@ -36,10 +36,15 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
 
   AdvancedDrawerController _advancedDrawerController =
       AdvancedDrawerController();
-  bool profileIsnotComplette() => (appStore.userEmail!.trim().isEmpty ||
-      appStore.userName!.trim().isEmpty ||
-      appStore.userclasse!.trim().isEmpty ||
-      appStore.userAge!.trim().isEmpty);
+  bool profileIsnotComplette() {
+    print(
+        "Classe: ${appStore.userclasse}, Email: ${appStore.userEmail}, Name: ${appStore.userName}, Age: ${appStore.userAge}");
+    return (appStore.userEmail!.trim().isEmpty ||
+        appStore.userName!.trim().isEmpty ||
+        appStore.userclasse!.trim().isEmpty ||
+        appStore.userAge!.trim().isEmpty);
+  }
+
   DateTime? currentBackPressTime;
 
   final Shader linearGradient = LinearGradient(
@@ -79,7 +84,6 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
         (OSNotificationOpenedResult result) {
           if (result.notification.additionalData!.containsKey('id')) {
             String quizId = result.notification.additionalData!['id'];
-
             QuizService().getQuizByQuizId(quizId).then(
               (value) {
                 if (profileIsnotComplette()) {
@@ -644,8 +648,7 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
     );
   }
 
-  PersistentBottomSheetController<dynamic> bottomshetUncompletteProfile(
-      BuildContext context) {
+  bottomshetUncompletteProfile(BuildContext context) {
     return showBottomSheet(
       context: context,
       shape: RoundedRectangleBorder(

@@ -31,20 +31,24 @@ class QuizService extends BaseService {
   }
 
   Future<List<QuizModel>> getQuiz() async {
-    
-    return await ref.get().then((event) => event.docs
-        .map((e) => QuizModel.fromJson(e.data() as Map<String, dynamic>))
-        .toList());
+    return await ref.where("classe", isEqualTo: appStore.userclasse).get().then(
+        (event) => event.docs
+            .map((e) => QuizModel.fromJson(e.data() as Map<String, dynamic>))
+            .toList());
   }
 
   Future<QuizModel> quizByQuizID(String? id) async {
-    var data = await ref.where(CommonKeys.id, isEqualTo: id).get();
+    var data = await ref
+        .where(CommonKeys.id, isEqualTo: id)
+        .where("classe", isEqualTo: appStore.userclasse)
+        .get();
     return QuizModel.fromJson(data.docs.first.data() as Map<String, dynamic>);
   }
 
   Future<List<QuizModel>> get quizList async {
-    return await ref.get().then((value) => value.docs
-        .map((e) => QuizModel.fromJson(e.data() as Map<String, dynamic>))
-        .toList());
+    return await ref.where("classe", isEqualTo: appStore.userclasse).get().then(
+        (value) => value.docs
+            .map((e) => QuizModel.fromJson(e.data() as Map<String, dynamic>))
+            .toList());
   }
 }

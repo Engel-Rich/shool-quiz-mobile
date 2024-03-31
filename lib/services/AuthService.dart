@@ -1,15 +1,13 @@
 import 'dart:async';
-
-import 'package:firebase_auth/firebase_auth.dart';
+import '../main.dart';
 import 'package:flutter/material.dart';
-import 'package:google_sign_in/google_sign_in.dart';
 import 'package:nb_utils/nb_utils.dart';
-import 'package:quizapp_flutter/models/UserModel.dart';
+import '../components/OTPLoginComponent.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:google_sign_in/google_sign_in.dart';
 import 'package:quizapp_flutter/utils/ModelKeys.dart';
 import 'package:quizapp_flutter/utils/constants.dart';
-
-import '../components/OTPLoginComponent.dart';
-import '../main.dart';
+import 'package:quizapp_flutter/models/UserModel.dart';
 
 class AuthService {
   static FirebaseAuth _auth = FirebaseAuth.instance;
@@ -163,6 +161,7 @@ class AuthService {
             await setValue(USER_AGE, user.age.validate());
             await setValue(USER_POINTS, user.points.validate());
             await setValue(USER_PHOTO_URL, user.photoUrl.validate());
+            await setValue(USER_CLASS, user.classe.validate());
             // await setValue(USER_MASTER_PWD, user.masterPwd.validate());
             await setValue(LOGIN_TYPE, user.loginType.validate());
             await setValue(IS_LOGGED_IN, true);
@@ -172,7 +171,7 @@ class AuthService {
             appStore.setProfileImage(user.photoUrl);
             appStore.setUserEmail(user.email);
             appStore.setUserAge(user.age);
-
+            appStore.setUserClasse(user.classe);
             await userDBService.updateDocument(
                 {CommonKeys.updatedAt: DateTime.now()}, user.id);
           },
@@ -204,10 +203,12 @@ class AuthService {
     await removeKey(LOGIN_TYPE);
     await removeKey(USER_AGE);
     await removeKey(USER_POINTS);
+    await removeKey(USER_CLASS);
 
     appStore.setLoggedIn(false);
     appStore.setUserId('');
     appStore.setName('');
+    appStore.setUserClasse('');
     appStore.setUserEmail('');
     appStore.setProfileImage('');
   }
@@ -218,6 +219,7 @@ class AuthService {
     await setValue(USER_EMAIL, user.email);
     await setValue(USER_POINTS, user.points);
     await setValue(USER_AGE, user.age.validate());
+    await setValue(USER_CLASS, user.classe.validate());
     await setValue(USER_PHOTO_URL, user.photoUrl.validate());
     await setValue(IS_TESTER, user.isTestUser);
     appStore.setLoggedIn(true);
@@ -226,6 +228,7 @@ class AuthService {
     appStore.setProfileImage(user.photoUrl);
     appStore.setUserEmail(user.email);
     appStore.setUserAge(user.age);
+    appStore.setUserClasse(user.classe);
     // await setValue(USER_MASTER_PWD, user.masterPwd.validate());
     await setValue(IS_LOGGED_IN, true);
   }
@@ -277,6 +280,7 @@ class AuthService {
       appStore.setName(userModel.name);
       appStore.setProfileImage(userModel.photoUrl);
       appStore.setUserEmail(userModel.email);
+      appStore.setUserClasse(userModel.classe);
       await setUserDetailPreference(userModel);
     } catch (e) {
       print("Error Level 2.3 ->" + e.toString());
@@ -320,12 +324,14 @@ class AuthService {
     await removeKey(LOGIN_TYPE);
     await removeKey(USER_AGE);
     await removeKey(USER_POINTS);
+    await removeKey(USER_CLASS);
 
     appStore.setLoggedIn(false);
     appStore.setUserId('');
     appStore.setName('');
     appStore.setUserEmail('');
     appStore.setProfileImage('');
+    appStore.setUserClasse('');
     await userDBService.removeDocument(uid!).then((value) async {
       _auth.currentUser!.delete();
       await _auth.signOut();

@@ -84,8 +84,11 @@ class UserDBService extends BaseService {
   }
 
   Future<List<UserModel>> userByPoints() async {
-    return await ref.orderBy("points", descending: true).get().then((event) =>
-        event.docs
+    return await ref
+        .where('classe', isEqualTo: appStore.userclasse)
+        .orderBy("points", descending: true)
+        .get()
+        .then((event) => event.docs
             .map((e) => UserModel.fromJson(e.data() as Map<String, dynamic>))
             .toList());
   }
